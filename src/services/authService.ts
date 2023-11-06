@@ -1,4 +1,3 @@
-import { error } from "console";
 import api from "./api"
 
 interface RegisterParams{
@@ -8,6 +7,11 @@ interface RegisterParams{
   birth: string;
   email: string;
   password: string;
+}
+
+interface loginParams{
+  email: string;
+  password: string
 }
 
 const authService = {
@@ -20,7 +24,21 @@ const authService = {
     })
 
     return res
+  },
+  login: async (params: loginParams) =>{
+    const res = await api.post("/auth/login", params).catch((error)=>{
+      if(error.response.status === 400 || error.response.status === 401){
+        return error.response
+      }
+      return error;
+    })
+    if(res.status === 200){
+      sessionStorage.setItem("onebitflix-token", res.data.token)
+    }
+
+    return res;
   }
+  
 }
 
 export default authService
