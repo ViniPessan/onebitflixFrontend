@@ -54,7 +54,7 @@
   gap: 50px;
 }
 .inputFlex{
-width: 250px;
+width: 300px;
 background-color: transparent;
 border: 1px solid $darkGray;
 color: white;
@@ -79,7 +79,7 @@ text-transform: uppercase;
 .input{
   @extend .inputFlex;
   text-transform: lowercase;
-  width: 550px;
+    width: 650px;
 }
 
 .btn{
@@ -113,8 +113,14 @@ text-transform: uppercase;
   padding: 14px 0px;
   &:hover{
     background-color: transparent;
-    border-color: $lightRed;
-    color: $lightGray;
+    color: $lightRed;
+  }
+  &:active{
+    background-color: transparent;
+  }
+  &:focus{
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
