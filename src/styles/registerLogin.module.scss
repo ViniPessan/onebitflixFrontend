@@ -38,6 +38,9 @@
     box-shadow: none;
   }
 }
+.footer{
+  background-color: black
+}
 
 .inputName{
   @extend .input;
@@ -46,6 +49,9 @@
   &::placeholder{
     text-transform: none;
   }
+}
+.footer{
+  background-color: black;
 }
 
 .formBtn{

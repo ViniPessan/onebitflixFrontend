@@ -94,7 +94,9 @@ const Login = function(){
         </Form>
         <ToastComponent color={toastColor} isOpen={toastIsOpen} message={toastMessage}/>
       </Container>
+      <div className={styles.footer}>
       <Footer/>
+      </div>
     </main>
     </>
   )

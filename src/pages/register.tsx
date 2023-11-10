@@ -159,7 +159,9 @@ const Register = function(){
           </Button>
         </Form>
       </Container>
+      <div className={styles.footer}>
       <Footer/>
+      </div>
     <ToastComponent color="bg-danger" isOpen={toastIsOpen} message={toastMessage}/>
     </main>
   </>

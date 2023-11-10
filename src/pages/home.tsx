@@ -5,6 +5,7 @@ import FeaturedSection from "@/components/homeAuth/featuresSection"
 import ListCategory from "@/components/homeAuth/listCategory"
 import NewestCategory from "@/components/homeAuth/newestCategory"
 import Head from "next/head"
+import styles from "../styles/profile.module.scss"
 
 const HomeAuth = function(){
   return(
@@ -19,7 +20,9 @@ const HomeAuth = function(){
       <FavorityCategory/>
       <FeaturedCategory/>
       <ListCategory/>
+      <div className={styles.style}>
       <Footer/>
+      </div>
     </main>
     </>
   )
