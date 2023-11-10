@@ -1,6 +1,6 @@
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import styles from "../../../styles/profile.module.scss";
-import { FormEvent, use, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import profileService from "@/services/profileService";
 import ToastComponent from "@/components/common/toast";
 import { useRouter } from "next/router";
