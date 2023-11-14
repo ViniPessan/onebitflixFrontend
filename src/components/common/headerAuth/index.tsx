@@ -2,7 +2,7 @@ import { Container, Form, Input } from "reactstrap"
 import styles from "./styles.module.scss"
 import Link from "next/link"
 import Modal from "react-modal"
-import { useState, useEffect } from "react"
+import { useState, useEffect, FormEvent } from "react"
 import { useRouter } from "next/router"
 import profileService from "@/services/profileService"
 
@@ -13,6 +13,20 @@ const HeaderAuth = function (){
   const router = useRouter()
   const [modalOpen, setModalIsOpen] = useState(false)
   const [initial, setInitial] = useState("")
+  const [searchName, setSearchName]= useState("")
+  
+  const handleSearch =async (event:FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    router.push(`search?name=${searchName}`);
+    setSearchName("")
+  }
+
+  const handleSearchClick = ()=>{
+    router.push(`search?name=${searchName}`);
+    setSearchName("")
+  }
+
 
   useEffect(() =>{
     profileService.fetchCurrent().then((user)=>{
@@ -40,10 +54,19 @@ const HeaderAuth = function (){
         <img src="/logoOnebitflix.svg" alt="logoOne" className={styles.imgLogoNav} />
       </Link>
       <div className="d-flex aling-items-center">
-        <Form>
-          <Input name="search" type="search" placeholder="Pesquisar" className={styles.input}/>
+        <Form onSubmit={handleSearch}>
+          <Input 
+          name="search" 
+          type="search" 
+          placeholder="Pesquisar" 
+          className={styles.input}
+          value={searchName}
+          onChange={(event)=>{
+            setSearchName(event.currentTarget.value.toLowerCase())
+          }}
+          />
         </Form>
-        <img src="/homeAuth/iconSearch.svg" alt="lupaHeader" className={styles.searchImg} />
+        <img src="/homeAuth/iconSearch.svg" alt="lupaHeader" className={styles.searchImg} onClick={handleSearchClick} />
       <p className={styles.userProfile} onClick={handleOpenModal}>{initial}</p>
       </div>
       <Modal 
