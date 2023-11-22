@@ -22,14 +22,17 @@ const EpisodeList = function ({episode, course}: props){
     const result = `${toString(minutes)}:${toString(seconds)}`
     return result
   }
+  console.log("episode.order", episode.order);
+  console.log("episode.id", episode.id);
+
   
-  const handleepisodePlayer = ()=>{
-    router.push(`/course/episode/${episode.order - 1}?courseid=${course.id}`)
+  const handleEpisodePlayer = ()=>{
+    router.push(`/course/episode/${episode.order - 1}?courseid=${course.id}&episodeid=${episode.id}`)
   }
 
   return (
     <>
-    <div className={styles.episodeCard} onClick={handleepisodePlayer}>
+    <div className={styles.episodeCard} onClick={handleEpisodePlayer}>
       <div className={styles.episodeOrderTime}>
         <p className={styles.episodeOrder}>Episódio Nº {episode.order}</p>
         <p className={styles.episodeTime}>{handleSecondsToMin(episode.secondsLong)}</p>
