@@ -13,12 +13,23 @@ import watchEpisodeService from "@/services/episodeService";
 
 const EpisodePlayer = function () {
   const router = useRouter();
-
+  
   const [course, setCourse] = useState<CourseType>();
   const [isReady, setIsReady] = useState(false)
+  const [loading, setLoading] = useState(true);
   const episodeOrder = parseFloat(router.query.id?.toString() ?? "");
   const episodeId = parseFloat(router.query.episodeid?.toString() || "");
-  const courseId = router.query.courseid?.toString() || "";
+  const courseId = router.query.courseid?.toString() || ""; 
+
+  useEffect(()=>{
+    if(!sessionStorage.getItem('onebitflix-token')){
+      router.push("/login")
+    } else {
+      setLoading(false)
+    }
+  }, [])
+
+  
 
   const [getEpisodeTime, setGetEpisodeTime] = useState(0);
   const [episodeTime, setEpisodeTime] = useState(0)
@@ -102,6 +113,13 @@ const EpisodePlayer = function () {
       handleNextEpisode()
     }
   }
+
+
+  
+  if(loading){ 
+    return <PageSpinner/>
+  }
+ 
   
 
   return (
