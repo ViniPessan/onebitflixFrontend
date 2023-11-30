@@ -1,5 +1,5 @@
 
-# Onebitflix - Backend
+# Onebitflix - Frontend
 
 Backend completo do projeto Onebitflix
 
@@ -57,7 +57,22 @@ Utilizando as tecnologias citadas, Precisamos instalar algumas bibliotecas:
 
 Editor de códigos usado: visual studio code
 
+## Página home não autenticada:
 
+![image](https://github.com/ViniPessan/onebitflixFrontend/assets/136939544/48f7d6cc-5d07-4855-82d6-7a0c7323076b)
+
+## Página de login:
+
+![image](https://github.com/ViniPessan/onebitflixFrontend/assets/136939544/9080d3f5-a886-472d-b57e-a3813934efb8)
+
+## Página de cadastro:
+
+![image](https://github.com/ViniPessan/onebitflixFrontend/assets/136939544/8ff428d2-94e4-49a3-ac1e-47f4d72bf2b5)
+
+## Página home autenticada:
+Algumas imagens estão distorcidas pois peguei da internet, não foram feitas com as medidas corretas para o projeto.
+![image](https://github.com/ViniPessan/onebitflixFrontend/assets/136939544/cf8d85f9-097f-46de-8f76-718f586916a3)
+![image](https://github.com/ViniPessan/onebitflixFrontend/assets/136939544/3cd402a6-a03d-4c11-ba93-58e60613e41c)
 
 
 
