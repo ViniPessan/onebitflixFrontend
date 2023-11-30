@@ -1,7 +1,7 @@
 
-# Onebitflix - Frontend
+# Onebitflix - Front-end
 
-Backend completo do projeto Onebitflix
+Front-end completo do projeto Onebitflix
 
 
 ## Descrição
@@ -21,10 +21,13 @@ O Onebitflix é um clone da Netflix desenvolvido durante o curso da Onebitcode, 
 - Javascript
 - Node
 - Next
+- Bootstrap
+- Sass
 - PostgreSQL
 - Express
 - Sequelize
 ## Inicialização
+
 Utilizando as tecnologias citadas, Precisamos instalar algumas bibliotecas: 
 
 
